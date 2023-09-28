@@ -1,8 +1,11 @@
+import React from "react";
+import styles from './main.module.css'; 
+
 const Main = () => {
     return (
-        <main className="contenedor-main">
+        <main>
             <section>
-                <h2>
+                <h2 className={styles.contenedorMain}>
                     Bienvenidos!
                 </h2>
             </section>

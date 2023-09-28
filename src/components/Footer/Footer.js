@@ -1,9 +1,11 @@
+import Navbar from '../Nav/Navbar';
+import styles from './footer.module.css';
+
 const Footer = () => {
     return (
         <footer>
-            <h5>
-                Leandro Magno
-            </h5>
+            <Navbar />
+            <p className={styles.contenedor}>Leandro Magnotti</p>
         </footer>
     )
 }
