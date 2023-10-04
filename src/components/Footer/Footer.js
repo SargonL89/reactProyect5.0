@@ -4,7 +4,7 @@ import styles from './footer.module.css';
 const Footer = () => {
     return (
         <footer>
-            <Navbar />
+            <Navbar ifHeader={false}/>
             <p className={styles.contenedor}>Leandro Magnotti</p>
         </footer>
     )

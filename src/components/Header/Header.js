@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <header>
             <h1 className={styles}>Prototype EC5.0</h1>
-            <Navbar />
+            <Navbar ifHeader={true}/>
         </header>
     )
 }
