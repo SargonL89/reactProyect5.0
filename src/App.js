@@ -1,12 +1,22 @@
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import Main from './components/Main/Main';
+import ItemListContainer from './components/Main/ItemListContainer';
+import Counter from './components/Counter/Counter';
+import Texto from './components/Texto';
 
 const App = () => {
+    const saludo = '';
+
+    const saludo2 = () => {
+        console.log('Saludo2')
+    };
+
     return (
         <>
             <Header />
-            <Main />
+            <ItemListContainer saludo={saludo} saludo2={saludo2}/>
+            <Counter />
+            <Texto />
             <Footer />
         </>
     )
