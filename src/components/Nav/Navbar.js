@@ -9,6 +9,7 @@ const Navbar = (props) => {
       <nav className={styles.contenedor}>
           <CartWidget />
           <Button value='Sign In' variant='primary'/>
+          <Button value='Logout' variant='secundary'/>
           <a href="https://google.com">Productos</a>
           <a href="https://google.com">Nosotros</a>
           <a href="https://google.com">Contacto</a>

@@ -16,9 +16,9 @@ const Texto = () => {
         setValorBull(!valorBull)
     }
 
-    useEffect(() => {
-        console.log('Me ejecuto siempre')
-    });
+    // useEffect(() => {
+    //     console.log('Me ejecuto siempre')
+    // });
 
     useEffect(()=>{
         //tareas pesadas como solicitudes a bases de datos, tareas que requieran gasto de dinero
@@ -32,9 +32,9 @@ const Texto = () => {
     return (
     <div>
         <p>
-            Mi nombre {nombre}
+            Mi nombre es {nombre}
         </p>
-        {valorBull ? <h1>El valor es true</h1> : <h1>otra cosa</h1>}
+        {valorBull ? <p>El valor es true</p> : <p>otra cosa</p>}
         <button onClick={cambiarNombre}>
             Cambiar texto
         </button>

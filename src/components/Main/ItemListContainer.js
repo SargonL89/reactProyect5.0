@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../Button/Button';
+import Texto from './Texto';
 
 const ItemListContainer = ({saludo, saludo2}) => {
     const numero = Math.random();
@@ -19,10 +19,10 @@ const ItemListContainer = ({saludo, saludo2}) => {
     }
     return (
         <div>
-          <Button value='Logout' variant='secundary'/>
           <p>{saludo}</p>
-          <button onClick={saludo2}>Saludar</button>
+          <button onClick={saludo2}>Saludar2</button>
           <button onClick={saludo3}>Saludar3</button>
+          <Texto />
         </div>
     );
 }
