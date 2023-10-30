@@ -9,10 +9,12 @@ const App = () => {
 
     const stock = 100;
     const initial = 0;
-    const [carrito, setCarrito] = useState('vacío');
+    // const [carrito, setCarrito] = useState('vacío');
+    const [products, setProducts] = useState(0)
 
-    const onAdd = () => {
-        setCarrito('Producto en carrito')
+    const onAdd = (counter) => {
+        // setCarrito('Producto en carrito')
+        setProducts(products + counter)
     };
 
     const saludo = '';
@@ -26,7 +28,7 @@ const App = () => {
             <ItemListContainer saludo={saludo} saludo2={saludo2}/>
             {/* <Counter /> */}
             <ItemCount stock={stock} initial={initial} onAdd={onAdd} />
-            <p>Carrito: {carrito}</p>
+            <p>Carrito: {products}</p>
             <Footer />
         </>
     )
