@@ -1,7 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Texto from './Texto';
+import {products} from '../../mock/products';
 
 const ItemListContainer = ({saludo, saludo2}) => {
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+      const task = new Promise((res, rej) => {
+        setTimeout(()=> {
+          res(products);
+        }, 1500);
+        setTimeout(()=> {
+          rej('Ocurrió un error');
+        }, 1500); 
+      });
+      task.then((data)=> {
+        setItems(data + items)
+      })
+      .catch((error)=> {
+        console.log('catch: ', error)
+      })
+      .finally(()=> {
+        console.log('finally')
+      })
+    }, []);
+    
     const numero = Math.random();
     if (numero <= 0.25) {
         saludo = "Bienvenido! Nos alegra verte!";
@@ -17,6 +40,9 @@ const ItemListContainer = ({saludo, saludo2}) => {
     const saludo3 = () => {
       console.log('saludo3')
     } 
+
+
+
     return (
         <div>
           <p>{saludo}</p>

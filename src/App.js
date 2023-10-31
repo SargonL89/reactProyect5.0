@@ -27,7 +27,7 @@ const App = () => {
             {/* <Counter /> */}
             <ItemCount stock={stock} initial={initial} onAdd={onAdd} />
             <p>Carrito: {carrito}</p>
-            <Footer />
+            <Footer /> 
         </>
     )
 };
