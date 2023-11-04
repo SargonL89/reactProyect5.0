@@ -1,0 +1,8 @@
+.prodTitle {
+    display: flex;
+    justify-content: center;
+}
+
+.prod {
+    margin: 2%;
+}
