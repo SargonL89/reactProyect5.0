@@ -6,3 +6,10 @@
 .prod {
     margin: 2%;
 }
+
+.imgRem {
+    height: 220px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
