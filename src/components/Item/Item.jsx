@@ -4,7 +4,6 @@ import styles from './item.module.css'
 const Item = ({title, price, stock, category, img}) => {
 
   return (
-    <div>
       <div>
           <p className={styles.prodTitle}><strong>{title}</strong></p>
           <p className={styles.prod}>Precio: US${price}</p>
@@ -12,7 +11,6 @@ const Item = ({title, price, stock, category, img}) => {
           <p className={styles.prod}>Categoria: {category}</p> 
           <img className={styles.imgRem} src={img} alt="remera negra"/>
       </div>
-    </div>
   )
 }
 

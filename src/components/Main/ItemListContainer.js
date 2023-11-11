@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Texto from './Texto';
 import {products} from '../../mock/products';
 import ItemList from '../ItemList/ItemList';
+import EjemploApi from '../EjemploAPI/EjemploApi';
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 
 const ItemListContainer = ({saludo, saludo2}) => {
     const [items, setItems] = useState([]);
@@ -37,6 +39,7 @@ const ItemListContainer = ({saludo, saludo2}) => {
           rej('Ocurrió un error inesperado')
         }, 1500);
       });
+      
       getProducts.then((data) => {
         setItems(data)
       })
@@ -73,6 +76,8 @@ const ItemListContainer = ({saludo, saludo2}) => {
           <button onClick={saludo3}>Saludar3</button>
           <Texto />
           <ItemList items={items}/>
+          <ItemDetailContainer/>
+          <EjemploApi/>
         </div>
     ); 
 }
