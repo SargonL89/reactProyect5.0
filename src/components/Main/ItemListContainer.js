@@ -4,10 +4,35 @@ import {products} from '../../mock/products';
 import ItemList from '../ItemList/ItemList';
 import EjemploApi from '../EjemploAPI/EjemploApi';
 import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
+import { Route, Routes, useParams } from 'react-router-dom';
 
 const ItemListContainer = ({saludo, saludo2}) => {
     const [items, setItems] = useState([]);
 
+    // const parametroURL = useParams();
+    // console.log('parametroURL: ', parametroURL.categoryId); 
+  const {categoryId} = useParams()
+
+  useEffect(() => {
+    const getProducts = () => 
+    new Promise((res, rej) => {
+      const prodFiltrados = products.filter((prod) => prod.category === categoryId);
+      setTimeout(() => {
+        res(categoryId ? prodFiltrados : products);
+      }, 500);
+    });
+
+    getProducts()
+        .then((data)=> {
+          setItems(data)
+        })
+        .catch((error)=> {
+          console.log('catch: ', error)
+        })
+        .finally(()=> {
+          console.log('Proceso finalizado')
+        })
+  }, [categoryId])
     // HECHO EN CLASE
     // useEffect(() => {
     //   const getProducts = new Promise((res, rej) => {
@@ -30,26 +55,48 @@ const ItemListContainer = ({saludo, saludo2}) => {
     //     })
     // }, []);
 
-    useEffect(() => {
-      const getProducts = new Promise((res, rej) => {
-        setTimeout(()=>{
-          res(products)
-        }, 1500);
-        setTimeout(()=> {
-          rej('Ocurrió un error inesperado')
-        }, 1500);
-      });
-      
-      getProducts.then((data) => {
-        setItems(data)
-      })
-      .catch((error)=> {
-        console.log(error)
-      })
-      .finally(()=> {
-        console.log('Proceso finalizado')
-      })
-    }, [])
+    // useEffect(() => {
+    //   if (categoryId) {
+    //     const getProducts = new Promise((res, rej) => {
+    //       const prodFiltrados = products.filter((prod)=> prod.category === categoryId)
+    //       setTimeout(()=>{
+    //         res(prodFiltrados)
+    //       }, 1500);
+    //       setTimeout(()=> {
+    //         rej('Ocurrió un error inesperado')
+    //       }, 1500);
+    //     });
+        
+    //     getProducts.then((data) => {
+    //       setItems(data)
+    //     })
+    //     .catch((error)=> {
+    //       console.log(error)
+    //     })
+    //     .finally(()=> {
+    //       console.log('Proceso finalizado')
+    //     })
+    //   } else {
+    //     const getProducts = new Promise((res, rej) => {
+    //       setTimeout(()=>{
+    //         res(products)
+    //       }, 1500);
+    //       setTimeout(()=> {
+    //         rej('Ocurrió un error inesperado')
+    //       }, 1500);
+    //     });
+        
+    //     getProducts.then((data) => {
+    //       setItems(data)
+    //     })
+    //     .catch((error)=> {
+    //       console.log(error)
+    //     })
+    //     .finally(()=> {
+    //       console.log('Proceso finalizado')
+    //     })
+    //   }
+    // }, [categoryId])
 
     
     const numero = Math.random();
@@ -70,16 +117,23 @@ const ItemListContainer = ({saludo, saludo2}) => {
 
 
     return (
-        <div>
-          <p>{saludo}</p>
-          <button onClick={saludo2}>Saludar2</button>
-          <button onClick={saludo3}>Saludar3</button>
-          <Texto />
-          <ItemList items={items}/>
-          <ItemDetailContainer/>
-          <EjemploApi/>
-        </div>
+      <Routes>
+        <Route path='/' element={<ItemList items={items}/>}/>
+        <Route path='/detail/:title' element={<ItemDetailContainer/>}/>
+        <Route path='/category/:categoryId/*' element={<ItemListContainer />}/>
+
+        {/* <Route path='/saludo' element={
+          <div>
+            <p>{saludo}</p>
+            <button onClick={saludo2}>Saludar2</button>
+            <button onClick={saludo3}>Saludar3</button>
+          <div/>
+        }/> */}
+        <Route path='/texto' element={<Texto />}/>
+        <Route path='/ejemplo' element={<EjemploApi/>}/>
+      </Routes>
     ); 
 }
 
 export default ItemListContainer
+

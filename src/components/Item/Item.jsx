@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './item.module.css'
+import { Link } from 'react-router-dom'
 
 const Item = ({title, price, stock, category, img}) => {
 
@@ -9,7 +10,9 @@ const Item = ({title, price, stock, category, img}) => {
           <p className={styles.prod}>Precio: US${price}</p>
           <p className={styles.prod}>Disponibles: {stock}</p>
           <p className={styles.prod}>Categoria: {category}</p> 
-          <img className={styles.imgRem} src={img} alt="remera negra"/>
+          <Link to={`/detail/${title}`}>
+            <img className={styles.imgRem} src={img} alt="remera negra"/>
+          </Link>
       </div>
   )
 }

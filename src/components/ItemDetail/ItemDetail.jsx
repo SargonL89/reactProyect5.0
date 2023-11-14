@@ -2,9 +2,6 @@ import React from 'react'
 
 const ItemDetail = ({product}) => {
 
-    console.log('de Item Det: ', product)
-    console.log('de Item Det: ', typeof product)
-
     if (product.length === 0) {
       return <p>Cargando... </p>;
     }

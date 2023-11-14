@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { products } from '../../mock/products'
 import ItemDetail from '../ItemDetail/ItemDetail'
+import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState([])
+  // const parametro = useParams();
+  // console.log(parametro)
+  const {title} = useParams()
+
+  
 
   useEffect(()=> {
     const detail = new Promise((res, rej) => {
@@ -34,6 +40,5 @@ const ItemDetailContainer = () => {
   )
 }
 
-// title={product.title} price={product.price} stock={product.stock} category={product.category} img={product.img}
 
 export default ItemDetailContainer
