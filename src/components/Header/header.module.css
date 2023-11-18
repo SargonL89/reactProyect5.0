@@ -1,8 +1,35 @@
-h1 {
+header {
+    margin: 0%;
+    padding: 0%;
+
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(29, 8, 104);
+    background-color: rgb(16, 0, 38);
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header:hover {
+    transition: 1s;
+    background-color: rgb(5, 0, 72);
+}
+
+.logo {
+    font-size: 200%;
     padding: 10px;
     margin: 0px;
     color: white;
     text-shadow: 2px 2px 4px rgb(255, 0, 0);
+}
+
+.logo:hover {
+    transition: 1s ease;
+    text-shadow: 2px 2px 4px rgb(255, 170, 170);
+}
+
+.link {
+    text-decoration: none;
+    margin: 0%;
+    padding: 0%;
 }

@@ -30,5 +30,29 @@ export const products = [
         stock: 28,
         category: 'remeras',
         img: 'https://res.cloudinary.com/sargonl89/image/upload/v1699193283/remera6_wjglwy.jpg'
+    },
+    {
+        id: 5,
+        title: 'Jean azul',
+        price: 890,
+        stock: 12,
+        category: 'jeans',
+        img: 'https://res.cloudinary.com/sargonl89/image/upload/v1700140874/jean1_ccmxbh.jpg'
+    },
+    {
+        id: 6,
+        title: 'Jean Wrangler',
+        price: 950,
+        stock: 20,
+        category: 'jeans',
+        img: 'https://res.cloudinary.com/sargonl89/image/upload/v1700140874/jean3_yumrj4.jpg'
+    },
+    {
+        id: 7,
+        title: 'Jean Levis',
+        price: 985,
+        stock: 15,
+        category: 'jeans',
+        img: 'https://res.cloudinary.com/sargonl89/image/upload/v1700140873/jean2_gvwbr7.jpg'
     }
 ] 

@@ -5,7 +5,10 @@ const CartWidget = () => {
     return (
       <div className={styles.cart}>
         <span class="material-symbols-outlined">shopping_cart</span>
-        <span>4</span>
+        <div>
+        {/* <span className={styles.span}>4</span> */}
+        </div>
+        
       </div>
     )
 }

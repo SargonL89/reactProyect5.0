@@ -1,33 +1,40 @@
-.contenedor {
-    font-family: Arial, Helvetica, sans-serif;
+.contHead {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 }
 
-.contenedor:hover {
+.contFoot {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.contFoot:hover {
     transition: 1s;
     background-color: rgb(16, 0, 38);
 }
 
-a {
+.linkNav {
     margin: 5px;
     text-decoration: none;
     color: red
-}
+} 
 
-a:hover {
+.linkNav:hover {
     transition:0.25s ease;
     color: white
 }
 
 .cart {
     margin: 5px;
-    color: red
+    color: red;
 }
 
 .cart:hover {
     transition:0.25s ease;
     color: white
 }
-
