@@ -5,23 +5,15 @@ import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState([])
-  // const parametro = useParams();
-  // console.log(parametro)
   const {title} = useParams()
-
-  
 
   useEffect(()=> {
     const detail = new Promise((res, rej) => {
-      const filtered = products.filter((product)=> {
-        return product.title === 'Remera Iorio';
+      const filtered = products.filter((prod)=> {
+        return prod.title === title;
       });
-      // setTimeout(()=> {
-        res(filtered)
-      // }, 2000);
-      // setTimeout(()=> {
+        res(title ? filtered : products)
         rej('Ocurrió un error en la solicitud')
-      // }, 2000)
     })
 
     detail
@@ -31,7 +23,7 @@ const ItemDetailContainer = () => {
     .catch(error => {
       console.log('Se produjo un error: ', error)
     })
-  }, [])
+  }, [title])
 
   return (
     <>

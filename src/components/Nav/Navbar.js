@@ -10,7 +10,7 @@ const Navbar = (props) => {
     return (
       <nav className={styles.contHead}>
           <Link className={styles.linkNav} to="/category/remeras">Remeras</Link>
-          <Link className={styles.linkNav} to="/category/camisas">Jeans</Link>
+          <Link className={styles.linkNav} to="/category/jeans">Jeans</Link>
           <Link to='/cart'><CartWidget /></Link>
       </nav>
     )

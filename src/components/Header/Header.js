@@ -5,7 +5,7 @@ import  { Link } from 'react-router-dom'
 const Header = () => {
     return (
         <header>
-            <Link className={styles.link}>
+            <Link className={styles.link} to={"/"}> 
                 <p className={styles.logo}>Prototype EC5.0</p>
             </Link>
             <Navbar ifHeader={true}/>

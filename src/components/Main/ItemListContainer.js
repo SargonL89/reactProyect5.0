@@ -11,14 +11,14 @@ const ItemListContainer = ({saludo, saludo2}) => {
 
     // const parametroURL = useParams();
     // console.log('parametroURL: ', parametroURL.categoryId); 
-  const {categoryId} = useParams()
+  const {category} = useParams()
 
   useEffect(() => {
     const getProducts = () => 
     new Promise((res, rej) => {
-      const prodFiltrados = products.filter((prod) => prod.category === categoryId);
+      const prodFiltrados = products.filter((prod) => prod.category === category);
       setTimeout(() => {
-        res(categoryId ? prodFiltrados : products);
+        res(category ? prodFiltrados : products);
       }, 500);
     });
 
@@ -32,7 +32,7 @@ const ItemListContainer = ({saludo, saludo2}) => {
         .finally(()=> {
           console.log('Proceso finalizado')
         })
-  }, [categoryId])
+  }, [category])
     // HECHO EN CLASE
     // useEffect(() => {
     //   const getProducts = new Promise((res, rej) => {
@@ -111,24 +111,14 @@ const ItemListContainer = ({saludo, saludo2}) => {
       } else {
         saludo = "Ha ocurrido un error inesperado";
       };
-    const saludo3 = () => {
-      console.log('saludo3')
-    } 
 
 
     return (
       <Routes>
         <Route path='/' element={<ItemList items={items}/>}/>
-        <Route path='/detail/:title' element={<ItemDetailContainer/>}/>
-        <Route path='/category/:categoryId/*' element={<ItemListContainer />}/>
+        <Route path='/detail/:title/*' element={<ItemDetailContainer/>}/>
+        <Route path='/category/:category/*' element={<ItemListContainer />}/>
 
-        {/* <Route path='/saludo' element={
-          <div>
-            <p>{saludo}</p>
-            <button onClick={saludo2}>Saludar2</button>
-            <button onClick={saludo3}>Saludar3</button>
-          <div/>
-        }/> */}
         <Route path='/texto' element={<Texto />}/>
         <Route path='/ejemplo' element={<EjemploApi/>}/>
       </Routes>
