@@ -1,0 +1,20 @@
+.divItemDetail {
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.itemDescription {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.carrito {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

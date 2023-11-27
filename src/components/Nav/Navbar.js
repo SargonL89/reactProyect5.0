@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 
 const Navbar = (props) => {
 
-
   if (props.ifHeader) {
     return (
       <nav className={styles.contHead}>

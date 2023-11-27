@@ -5,6 +5,7 @@ import ItemList from '../ItemList/ItemList';
 import EjemploApi from '../EjemploAPI/EjemploApi';
 import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 import { Route, Routes, useParams } from 'react-router-dom';
+import Cart from '../Cart/Cart.jsx';
 
 const ItemListContainer = ({saludo, saludo2}) => {
     const [items, setItems] = useState([]);
@@ -119,6 +120,7 @@ const ItemListContainer = ({saludo, saludo2}) => {
         <Route path='/detail/:title/*' element={<ItemDetailContainer/>}/>
         <Route path='/category/:category/*' element={<ItemListContainer />}/>
 
+        <Route path='/cart' element={<Cart/>}/>
         <Route path='/texto' element={<Texto />}/>
         <Route path='/ejemplo' element={<EjemploApi/>}/>
       </Routes>
