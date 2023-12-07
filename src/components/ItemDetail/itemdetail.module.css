@@ -18,3 +18,7 @@
     flex-direction: row;
     align-items: center;
 }
+
+.redBtn:hover {
+    background-color: red;
+}

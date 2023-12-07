@@ -30,9 +30,9 @@ const ItemListContainer = ({saludo, saludo2}) => {
         .catch((error)=> {
           console.log('catch: ', error)
         })
-        .finally(()=> {
-          console.log('Proceso finalizado')
-        })
+        // .finally(()=> {
+        //   console.log('Proceso finalizado')
+        // })
   }, [category])
     // HECHO EN CLASE
     // useEffect(() => {
