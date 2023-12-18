@@ -10,10 +10,26 @@ const CartProvider = ({children}) => {
             return prod.id === product.id
         });
         if (filtered.length > 0) {
-            console.log(`Ya incluiste ${product.title} en el carrito`)
+            sumarCantidad(product, quantity)
+            // console.log(`Ya incluiste ${product.title} en el carrito`)
         } else {
             setCart([...cart, {...product, quantity}])
         };
+    }; 
+
+    const sumarCantidad = (product, quantity) => {
+        const cartActualized = cart.map((prod)=> {
+            if (prod.id === product.id) {
+                const productActualized = {
+                    ...prod,
+                    quantity: prod.quantity + quantity
+                }
+                return productActualized
+            } else {
+                return prod
+            }
+        });
+        setCart(cartActualized)
     };
 
     //corroborar si producto ya esta en carrito
@@ -31,10 +47,13 @@ const CartProvider = ({children}) => {
 
     // eliminar un solo producto
     const removeProd = (product) => {
-        const indexProd = cart.findIndex((item) => item.id === product.id);
-        cart.splice(indexProd, 1);
-        setCart([...cart]);
-        console.log(`Quitaste ${product.title} del carrito`);
+        // const indexProd = cart.findIndex((item) => item.id === product.id);
+        // cart.splice(indexProd, 1);
+        // setCart([...cart]);
+        // console.log(`Quitaste ${product.title} del carrito`);
+
+        const filterCart = cart.filter((prod)=> prod.id !== product.id);
+        setCart(filterCart)
     }
 
     //vaciar todo carrito
