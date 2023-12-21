@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './nav.module.css'
-import Cart from '../Cart/Cart.jsx'
 
 const CartWidget = () => {
     return (

@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <footer>
             <Navbar ifHeader={false}/>
-            <p className={styles.contenedor}>Leandro Magnotti</p>
+            <p className={styles.contenedor}>Leandro Magnotti ®</p>
         </footer>
     )
 }
