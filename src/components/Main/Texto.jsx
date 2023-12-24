@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import styles from './texto.module.css'
 
 const Texto = () => {
     const [nombre, setNombre] = useState('David');
@@ -41,6 +42,7 @@ const Texto = () => {
         <button onClick={cambiarValor}>
             Cambiar valor
         </button>
+        <div className={styles.spinnerContainer}><div className={styles.spinner}></div></div>
     </div>
     )
 }

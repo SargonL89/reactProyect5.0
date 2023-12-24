@@ -20,7 +20,7 @@ const ItemListContainer = () => {
       setTimeout(() => {
         setIsloading(false);
         res(category ? prodFiltrados : products);
-      }, 2000);
+      }, 700);
     });
 
     getProducts()
